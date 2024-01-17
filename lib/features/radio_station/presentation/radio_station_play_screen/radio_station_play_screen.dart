@@ -1,7 +1,8 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:radio_station_test/features/radio_station/domain/entity/radio_station_entity.dart';
 import 'package:radio_station_test/features/radio_station/domain/entity/radio_station_extra_entity.dart';
+import 'package:radio_station_test/features/radio_station/presentation/bloc/play_radio_station_bloc.dart';
 import 'package:radio_station_test/features/radio_station/presentation/radio_station_play_screen/radio_station_card.dart';
 
 class RadioStationPlayScreen extends StatefulWidget {
@@ -16,6 +17,7 @@ class RadioStationPlayScreen extends StatefulWidget {
 
 class _RadioStationPlayScreenState extends State<RadioStationPlayScreen> {
   final CardSwiperController controller = CardSwiperController();
+  late PlayRadioStationBloc playRadioStationBloc;
   int currentCardIndex = 0;
   List<RadioStationCard> cards = [];
 
@@ -30,7 +32,14 @@ class _RadioStationPlayScreenState extends State<RadioStationPlayScreen> {
   }
 
   @override
+  void dispose() {
+    playRadioStationBloc.add(PlayRadioStationPlayerResetEvent());
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    playRadioStationBloc = BlocProvider.of<PlayRadioStationBloc>(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -62,10 +71,8 @@ class _RadioStationPlayScreenState extends State<RadioStationPlayScreen> {
     int? currentIndex,
     CardSwiperDirection direction,
   ) {
-    if (null != currentIndex) {
-      cards[currentIndex].initCard();
-    }
-    cards[previousIndex].disposeCard();
+    BlocProvider.of<PlayRadioStationBloc>(context)
+        .add(PlayRadioStationPlayerResetEvent());
     return true;
   }
 
@@ -74,6 +81,8 @@ class _RadioStationPlayScreenState extends State<RadioStationPlayScreen> {
     int currentIndex,
     CardSwiperDirection direction,
   ) {
+    BlocProvider.of<PlayRadioStationBloc>(context)
+        .add(PlayRadioStationPlayerResetEvent());
     return false;
   }
 }
