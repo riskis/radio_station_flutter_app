@@ -6,8 +6,8 @@ import 'package:radio_station_test/features/radio_station/data/api/radio_station
 import 'package:radio_station_test/features/radio_station/data/repository/radio_station_repository_impl.dart';
 import 'package:radio_station_test/features/radio_station/domain/repository/radio_station_repository.dart';
 import 'package:radio_station_test/features/radio_station/domain/usecase/get_country_radio_station_usecase.dart';
-import 'package:radio_station_test/features/radio_station/presentation/bloc/main_radio_station_bloc.dart';
-import 'package:radio_station_test/features/radio_station/presentation/bloc/play_radio_station_bloc.dart';
+import 'package:radio_station_test/features/radio_station/presentation/bloc/main/main_radio_station_bloc.dart';
+import 'package:radio_station_test/features/radio_station/presentation/bloc/play/play_radio_station_bloc.dart';
 
 final serviceLocator = GetIt.instance;
 

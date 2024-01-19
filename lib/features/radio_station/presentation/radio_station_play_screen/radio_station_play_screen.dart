@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:radio_station_test/features/radio_station/domain/entity/radio_station_extra_entity.dart';
-import 'package:radio_station_test/features/radio_station/presentation/bloc/play_radio_station_bloc.dart';
+import 'package:radio_station_test/features/radio_station/presentation/bloc/play/play_radio_station_bloc.dart';
 import 'package:radio_station_test/features/radio_station/presentation/radio_station_play_screen/radio_station_card.dart';
 
 class RadioStationPlayScreen extends StatefulWidget {

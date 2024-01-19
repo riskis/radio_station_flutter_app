@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:radio_station_test/features/radio_station/domain/entity/radio_station_entity.dart';
-import 'package:radio_station_test/features/radio_station/presentation/bloc/play_radio_station_bloc.dart';
+import 'package:radio_station_test/features/radio_station/presentation/bloc/play/play_radio_station_bloc.dart';
 import 'package:volume_controller/volume_controller.dart';
 
 //TODO add bloc state management for VolumeController

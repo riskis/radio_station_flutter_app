@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:radio_station_test/features/app/routes.dart';
 import 'package:radio_station_test/features/radio_station/domain/entity/radio_station_entity.dart';
 import 'package:radio_station_test/features/radio_station/domain/entity/radio_station_extra_entity.dart';
-import 'package:radio_station_test/features/radio_station/presentation/bloc/main_radio_station_bloc.dart';
+import 'package:radio_station_test/features/radio_station/presentation/bloc/main/main_radio_station_bloc.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 
